@@ -4,12 +4,12 @@
   "description": "Server to host a submarine game that will reveal a geocache coordinates",
   "main": "index.js",
   "scripts": {
-    "build-client": "webpack",
+    "build": "webpack",
     "compile": "tsc --outDir dist",
-    "dev": "npm-run-all compile build-client server",
+    "dev": "npm-run-all compile build server",
     "knex": "knex",
-    "postinstall": "npm-run-all compile build-client",
-    "server": "node server/dist/index.js",
+    "postinstall": "npm-run-all compile build",
+    "server": "node dist/server/src/index.js",
     "start": "npm run server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
