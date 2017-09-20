@@ -1,4 +1,4 @@
-import {Coord, IslandMap} from '../interfaces'
+import {Coord, IslandMap, DatabaseRow} from '../interfaces'
 
 export function convertMovementsToString(movements: Coord[]): string {
   let currentPosition: Coord = {x: 0, y: 0}
@@ -36,7 +36,17 @@ export function convertStringToMovements(str: string): Coord[] {
   return movements
 }
 
-export function makeSolution(islandMap: IslandMap): {start: Coord, end: Coord, movements: Coord[]} {
+export function convertPositionToString(position: Coord): string {
+  return `${position.x},${position.y}`
+}
+
+export function convertStringToPosition(str: string): Coord {
+  const x = Number(str.slice(0,str.indexOf(',')))
+  const y = Number(str.slice(str.indexOf(',') + 1))
+  return {x, y}
+}
+
+export function makeMovements(islandMap: IslandMap): {start: Coord, end: Coord, movements: Coord[]} {
   let start: Coord
   while (!start) {
     const x = Math.floor(Math.random() * islandMap.width)
@@ -104,5 +114,9 @@ export function isBlocked(position: Coord, arr: Coord[]): boolean {
 
 export function isOutOfBounds(position: Coord, islandMap: IslandMap): boolean {
   return position.x < 0 || position.x >= islandMap.width || position.y < 0 || position.y >= islandMap.height
+}
+
+export function isCorrectAnswer(game: DatabaseRow, time: number, x: number, y: number): Boolean {
+  return false
 }
 

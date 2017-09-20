@@ -28,12 +28,20 @@ export interface Movements {
 
 export interface SubmitResponse {
   correct: boolean
-  error: string
-  answer: string
+  error?: string
+  answer?: string
 }
 
 export interface GetResponse {
   id: number
   tiles: string
   movements: string
+}
+
+export interface DatabaseRow {
+  id?: number
+  tiles: string
+  movements: string
+  start: string
+  completed: boolean
 }
