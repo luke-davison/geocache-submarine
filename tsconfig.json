@@ -12,6 +12,7 @@
   },
   "files": [
     "src/server/index.ts",
-    "src/client/index.tsx"
+    "src/client/index.tsx",
+    "src/server/test/microtests.ts"
   ]
 }

@@ -6,12 +6,11 @@
   "scripts": {
     "build": "webpack",
     "compile": "tsc --outDir dist",
-    "dev": "npm-run-all compile build server",
+    "dev": "npm-run-all compile build start",
     "knex": "knex",
     "postinstall": "knex migrate:latest && tsc --outDir dist && webpack",
-    "server": "node dist/server/index.js",
-    "start": "npm run server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node dist/server/index.js",
+    "test": "tsc --outDir dist && mocha dist/*/test/*.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +19,10 @@
   "author": "luke-davison",
   "license": "ISC",
   "devDependencies": {
+    "@types/chai": "^4.0.4",
+    "@types/mocha": "^2.2.43",
+    "chai": "^4.1.2",
+    "mocha": "^3.5.3",
     "sqlite3": "^3.1.8"
   },
   "dependencies": {

@@ -1,9 +1,9 @@
 import {Tile, TileMap, Coord as Island, IslandMap} from '../interfaces'
 
-const mapWidth = 3
-const mapHeight = 3
-const tileWidth = 5
-const tileHeight = 5
+export const mapWidth = 3
+export const mapHeight = 3
+export const tileWidth = 5
+export const tileHeight = 5
 
 export function getIslandsFromTile(tileId: string): Island[] {
   switch (tileId) {
@@ -63,11 +63,11 @@ export function convertStringToMap(str: string): TileMap {
       y++
     } else {
       tiles.push({x, y, tileId})
-      if (x > width) {
-        width = x
+      if (x + 1> width) {
+        width = x + 1
       }
-      if (y > height) {
-        height = y
+      if (y + 1> height) {
+        height = y + 1
       }
       x++
     }
