@@ -8,7 +8,7 @@
     "compile": "tsc --outDir dist",
     "dev": "npm-run-all compile build server",
     "knex": "knex",
-    "postinstall": "npm-run-all compile build",
+    "postinstall": "knex migrate:latest && tsc --outDir dist && webpack",
     "server": "node dist/server/src/index.js",
     "start": "npm run server",
     "test": "echo \"Error: no test specified\" && exit 1"

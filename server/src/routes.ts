@@ -6,6 +6,7 @@ import {SubmitResponse, GetResponse} from './interfaces'
 export const router = express.Router()
 
 router.get('/start', (req, res) => {
+  console.log('started')
   return getGame(req.app.get('knex'))
     .then((result: GetResponse) => res.send(result))
     .catch((err: Error) => res.status(500).send(err.message))
