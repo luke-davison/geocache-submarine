@@ -5,7 +5,7 @@ import * as knex from 'knex'
 import {checkAnswer, getGame} from './db'
 import {SubmitResponse, GetResponse} from './interfaces'
 
-const config = require('../../../knexfile')
+const config = require('../../knexfile')
 
 const environment = process.env.NODE_ENV || 'development'
 
@@ -28,7 +28,6 @@ router.get('/start', (req, res) => {
 })
 
 router.post('/submit', (req, res) => {
-  // hello
   const id = Number(req.body.id)
   if (!id || isNaN(id)) return res.status(500).send('No ID found')
   const time = Number(req.body.time)
