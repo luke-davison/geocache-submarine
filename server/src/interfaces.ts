@@ -25,3 +25,15 @@ export interface Movements {
   start: Coord
   movements: Coord[]
 }
+
+export interface SubmitResponse {
+  correct: boolean
+  error: string
+  answer: string
+}
+
+export interface GetResponse {
+  id: number
+  tiles: string
+  movements: string
+}

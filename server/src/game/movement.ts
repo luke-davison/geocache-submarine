@@ -1,4 +1,4 @@
-import {Coord, IslandMap} from './interfaces'
+import {Coord, IslandMap} from '../interfaces'
 
 export function convertMovementsToString(movements: Coord[]): string {
   let currentPosition: Coord = {x: 0, y: 0}

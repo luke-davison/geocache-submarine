@@ -1,4 +1,4 @@
-import {Tile, TileMap, Coord as Island, IslandMap} from './interfaces'
+import {Tile, TileMap, Coord as Island, IslandMap} from '../interfaces'
 
 const mapWidth = 3
 const mapHeight = 3

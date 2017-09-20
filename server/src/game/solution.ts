@@ -1,4 +1,4 @@
-import {Coord, IslandMap} from './interfaces'
+import {Coord, IslandMap} from '../interfaces'
 
 export function makeSolution(islandMap: IslandMap): {start: Coord, end: Coord, movements: Coord[]} {
   let start: Coord
